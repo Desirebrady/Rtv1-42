@@ -13,7 +13,7 @@
 NAME = rtv1
 
 SRC_PATH = srcs
-SRC_NAME = main.c window.c
+SRC_NAME = main.c reader.c parse.c raytracing.c vectors.c intersect.c vectors.c utils.c
 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)

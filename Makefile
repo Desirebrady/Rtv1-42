@@ -6,15 +6,15 @@
 #    By: dshumba <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/16 10:35:03 by dshumba           #+#    #+#              #
-#    Updated: 2018/08/16 10:35:07 by dshumba          ###   ########.fr        #
+#    Updated: 2018/09/10 07:13:43 by dshumba          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = rtv1
 
 SRC_PATH = srcs
-SRC_NAME = main.c reader.c parse.c raytracing.c vectors.c intersect.c vectors.c utils.c
-
+SRC_NAME = main.c reader.c parse.c raytracing.c vectors.c intersect.c \
+		   vectors.c utils.c color.c matrice.c object.c vectors2.c 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

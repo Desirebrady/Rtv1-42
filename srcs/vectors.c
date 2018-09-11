@@ -22,19 +22,19 @@ t_vector3	vector_mult(t_vector3 *v1, t_vector3 *v2)
 	return (result);
 }
 
-t_vector3	vector_sub(t_vector3 *v1, t_vector3 *v2)
+t_vector3	vector_sub(t_vector3 v1, t_vector3 v2)
 {
 	t_vector3 result;
 
-	result.x = v1->x - v2->x;
-	result.y = v1->y - v2->y;
-	result.z = v1->z - v2->z;
+	result.x = v1.x - v2.x;
+	result.y = v1.y - v2.y;
+	result.z = v1.z - v2.z;
 	return (result);
 }
 
-double		vector_dot(t_vector3 *v1, t_vector3 *v2)
+double		vector_dot(t_vector3 v1, t_vector3 v2)
 {
-	return (v1->x * v2->x + v1->y * v2->y + v1->z * v2->z);
+	return (v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
 }
 
 t_vector3	vector_scale(double t, t_vector3 *v)
@@ -47,12 +47,12 @@ t_vector3	vector_scale(double t, t_vector3 *v)
 	return (result);
 }
 
-t_vector3	vector_add(t_vector3 *v1, t_vector3 *v2)
+t_vector3	vector_add(t_vector3 v1, t_vector3 v2)
 {
 	t_vector3 result;
 
-	result.x = v1->x + v2->x;
-	result.y = v1->y + v2->y;
-	result.z = v1->z + v2->z;
+	result.x = v1.x + v2.x;
+	result.y = v1.y + v2.y;
+	result.z = v1.z + v2.z;
 	return (result);
 }

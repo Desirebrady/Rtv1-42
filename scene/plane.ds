@@ -1,0 +1,14 @@
+OBJECT: T_CAMERA
+{
+   position = (0, 0, -10);
+   rotation = (0, 0, 0);
+}
+
+OBJECT: T_PLANE
+{
+   position = (0, 0, 0);
+   rotation = (0, 0, 0);
+   colour = 0xff0000;
+   width = 8;
+   height = 16;
+}

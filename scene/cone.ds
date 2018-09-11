@@ -10,11 +10,11 @@ OBJECT: T_POINTLIGHT
    rotation = (0, 0, 0);
 }
 
-OBJECT: T_CYLINDER
+OBJECT: T_CONE
 {
-   position = (0, -4, 5);
-   rotation = (0, 1, 0);
+   position = (0, 0, 0);
+   rotation = (0, 0, 0);
    colour = 0xff0000;
    radius = 1;
-   height = 1;
+   height = 3;
 }

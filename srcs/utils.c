@@ -1,24 +1,19 @@
 #include "../includes/rtv1.h"
 
-void	display_percentage(int num)
-{
-	printf("Loading...%i%%\r", num);
-}
-
-int		ft_close(void)
+int			ft_close(void)
 {
 	exit(1);
 	return (0);
 }
 
-int		key_press(int keycode)
+int			key_press(int keycode)
 {
 	if (keycode == 53)
 		exit(1);
 	return (0);
 }
 
-int	solve_quadratic(t_vector3 q)
+int			solve_quadratic(t_vector3 q)
 {
 	double	d;
     double  r1;
@@ -39,4 +34,39 @@ int	solve_quadratic(t_vector3 q)
         r2 = tmpval;
     }
 	return (1);
+}
+
+double		convert_to_deg(double radian)
+{
+	double degrees;
+
+	degrees = radian * 180 / M_PI;
+	return	(degrees);
+}
+
+double		convert_to_radian(double degrees)
+{
+	double radian;
+
+	radian = degrees * M_PI / 180;
+	return	(radian);
+}
+
+int ft_rm_char(char *dest, char c)
+{
+   int removed = 0;
+   char *tmp;
+
+   while (*dest)
+   {
+       tmp = strchr(dest,c);
+       if (NULL==tmp)
+           break;
+       size_t len = strlen(tmp+1);
+       memmove(tmp,tmp+1,len);
+       tmp[len] = 0;
+       ++removed;
+       dest=tmp;
+   }
+   return (removed);
 }

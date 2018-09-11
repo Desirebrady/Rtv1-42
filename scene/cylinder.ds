@@ -1,0 +1,29 @@
+OBJECT: T_CAMERA
+{
+   position = (0, 0, -50);
+   rotation = (0, 1, 0);
+}
+
+OBJECT: T_POINTLIGHT
+{
+   position = (0, 0, 0);
+   rotation = (0, 0, 0);
+}
+
+OBJECT: T_CYLINDER
+{
+   position = (10, 0, 0);
+   rotation = (0, 1, 0);
+   colour = 0x0000ff;
+   radius = 2;
+   height = 1;
+}
+
+OBJECT: T_PLANE
+{
+   position = (0, 0, 0);
+   rotation = (0, 0, 90);
+   colour = 0xff0000;
+   width = 8;
+   height = 16;
+}

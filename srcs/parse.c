@@ -12,51 +12,6 @@
 
 #include "../includes/rtv1.h"
 
-int ft_rm_char(char *dest, char c)
-{
-   int removed = 0;
-   char *tmp;
-
-   while (*dest)
-   {
-       tmp = strchr(dest,c);
-       if (NULL==tmp)
-           break;
-       size_t len = strlen(tmp+1);
-       memmove(tmp,tmp+1,len);
-       tmp[len] = 0;
-       ++removed;
-       dest=tmp;
-   }
-   return (removed);
-}
-
-t_list          *ignore_comments(t_list *lst)
-{
-    int     lst_pos;
-
-    lst_pos = -1;
-    ft_rm_char(lst->content, '\n');
-    if (ft_strequ(lst->content, "/*") == 1)
-    {
-        while (lst)
-        {
-            ft_rm_char(lst->content, '\n');
-            if (ft_strequ(lst->content, "*/") == 1)
-            {
-                ft_rm_char(lst->content, '\n');
-                if (lst->next != NULL)
-                    lst = lst->next;
-                break ;
-            }
-            if (lst->next == NULL)
-                break ;
-            lst = lst->next;
-        }
-    }
-    return (lst);
-}
-
 t_objecttype    get_objecttype(t_list *lst)
 {
     t_objecttype    object_type;
@@ -77,20 +32,6 @@ t_objecttype    get_objecttype(t_list *lst)
     else if (ft_strstr(lst->content, "T_PYRAMID"))
         object_type = T_PYRAMID;
     return (object_type);
-}
-
-t_vector3       get_vector3(char *str)
-{
-    t_vector3   vector;
-    char        **vector_arr;
-
-    ft_rm_char(str, '\n');
-    str = ft_strrchr(str++, '(');
-    vector_arr = ft_strsplit(str, ' ');
-    vector.x = ft_atoi(vector_arr[0]);
-    vector.y = ft_atoi(vector_arr[1]);
-    vector.z = ft_atoi(vector_arr[2]);
-    return (vector);
 }
 
 double          get_value(char *str)
@@ -188,7 +129,6 @@ void    parse_list(t_list *lst, t_app *app)
     t_list          *tmp_lst;
     int             object_counter;
 
-    lst = ignore_comments(lst);
     tmp_lst = lst;
     ft_rm_char(lst->content, '\n');
     ft_rm_char(lst->content, ' ');
